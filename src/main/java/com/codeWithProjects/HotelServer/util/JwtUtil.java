@@ -18,6 +18,7 @@ import java.util.function.Function;
 public class JwtUtil {
 
     private String generateToken(Map<String, Object> extraClaims, UserDetails detail) {
+        System.out.println("now" +(detail.getUsername()));
         return Jwts.builder().setClaims(extraClaims).setSubject(detail.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000*60*60*24))

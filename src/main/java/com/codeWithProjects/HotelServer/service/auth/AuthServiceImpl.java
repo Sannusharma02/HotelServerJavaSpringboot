@@ -7,21 +7,19 @@ import com.codeWithProjects.HotelServer.entity.User;
 import com.codeWithProjects.HotelServer.enums.UserRole;
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityExistsException;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Getter
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
 
     private final UserRepository userRepository;
-
-    public AuthServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @PostConstruct
     public void createAnAdminAccount() {
@@ -50,7 +48,6 @@ public class AuthServiceImpl implements AuthService {
         user.setUserRole(UserRole.CUSTOMER);
         user.setPassword(new BCryptPasswordEncoder().encode(signUpRequest.getPassword()));
         User createdUser = userRepository.save(user);
-//        System.out.println("User created successfully");
         return createdUser.getUserDto();
     }
 

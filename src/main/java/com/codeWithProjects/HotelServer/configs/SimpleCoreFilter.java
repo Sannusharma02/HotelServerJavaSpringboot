@@ -12,6 +12,8 @@ import java.io.IOException;
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class SimpleCoreFilter implements Filter {
+    public SimpleCoreFilter() {
+    }
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

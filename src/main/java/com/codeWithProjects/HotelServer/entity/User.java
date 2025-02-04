@@ -61,22 +61,6 @@ public class User implements UserDetails {
         return true;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setUserRole(UserRole userRole) {
-        this.userRole = userRole;
-    }
-
     public UserDto getUserDto() {
         UserDto userDto = new UserDto();
         userDto.setId(id);
