@@ -1,0 +1,21 @@
+<nz-layout>
+  <nz-sider nzCollapsible nzWidth="200px">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item routerLink="/admin/room">
+        <span nz-icon nzType="apartment"></span>
+        <span><strong>Rooms</strong></span>
+      </li>
+      <li nz-menu-item routerLink="/admin/reservations">
+        <span nz-icon nzType="pull-request"></span>
+        <span><strong>Reservations</strong></span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+    <nz-footer></nz-footer>
+  </nz-layout>
+</nz-layout>
